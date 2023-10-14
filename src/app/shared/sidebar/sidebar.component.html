@@ -1,0 +1,22 @@
+<div class="sidebar">
+  <div class="container">
+    <div class="sidebar__wrapper">
+      <h3 class="sidebar__title">Заметки</h3>
+      <button class="sidebar__add-note" (click)="createNote()">
+        Создать заметку
+      </button>
+      <ol class="sidebar__list">
+        <li
+          class="sidebar__list-item"
+          *ngFor="let note of notes"
+          (click)="selectNote(note.id)"
+        >
+          <h3 class="sidebar__list-title">{{ note.title }}</h3>
+          <button class="sidebar__btns-item" (click)="deleteNote(note.id)">
+            <img src="../../../assets/images/delete.png" alt="" />
+          </button>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>

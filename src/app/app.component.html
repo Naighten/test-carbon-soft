@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <app-header class="header_block"></app-header>
+  <app-sidebar
+    class="sidebar_block"
+    [notes]="notes"
+    (created)="createNote()"
+    (selectedNote)="selectIdNote($event)"
+    (deletedNote)="deleteIdNote($event)"
+  ></app-sidebar>
+  <app-main
+    class="main_block"
+    [note]="selectedNote"
+    (deletedNote)="deleteIdNote($event)"
+    (savedNote)="saveIdNote($event)"
+  ></app-main>
+</div>

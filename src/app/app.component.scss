@@ -1,0 +1,25 @@
+.wrapper {
+   display: grid;
+   grid-template-columns: 300px 1fr;
+   grid-template-rows: 50px calc(100% - 100px);
+   height: 100%;
+   width: 100%;
+   gap: 30px 10px;
+   grid-template-areas:
+      "header header"
+      "sidebar main";
+}
+
+.header_block {
+   grid-area: header;
+}
+
+.sidebar_block {
+   grid-area: sidebar;
+   margin-left: 10px;
+}
+
+.main_block {
+   grid-area: main;
+   margin-right: 10px;
+}

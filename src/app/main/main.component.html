@@ -1,0 +1,33 @@
+<!-- <div class="container"> -->
+<div class="main__wrapper">
+  <div class="main__content" *ngIf="note.edited">
+    <input
+      type="text"
+      [(ngModel)]="note.title"
+      [ngModelOptions]="{ standalone: true }"
+      class="main__input"
+    />
+    <textarea
+      type="text"
+      [ngModelOptions]="{ standalone: true }"
+      [(ngModel)]="note.body"
+      class="main__input"
+    ></textarea>
+  </div>
+  <div class="main__content" *ngIf="!note.edited">
+    <h3 class="main__title">{{ note.title }}</h3>
+    <p class="main__body">{{ note.body }}</p>
+  </div>
+  <div class="main__btns">
+    <button class="main__btn" *ngIf="!note.edited" (click)="toEditNote()">
+      Редактировать заметку
+    </button>
+    <button class="main__btn" *ngIf="note.edited" (click)="saveNote(note)">
+      Сохранить заметку
+    </button>
+    <button class="main__btn" (click)="deleteNote(note.id)">
+      Удалить заметку
+    </button>
+  </div>
+</div>
+<!-- </div> -->
